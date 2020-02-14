@@ -22,12 +22,12 @@ public class GameController {
         this.gameService = gameService;
     }
 
-    @PostMapping("/add/")
+    @PostMapping("/add")
     public void addGame(@Valid @NotBlank @RequestBody Game game){
         gameService.addGame(game);
     }
 
-    @GetMapping("/getAll/")
+    @GetMapping("/getAll")
     public List<Game> getAllGames(){
         return gameService.getAllGames();
     }
@@ -42,7 +42,7 @@ public class GameController {
          gameService.deleteGame(id);
     }
 
-    @DeleteMapping("/deleteAll/")
+    @DeleteMapping("/deleteAll")
     public void deleteAllGames(){ gameService.deleteAllGames();}
 
     @PutMapping(path = "{id}")
